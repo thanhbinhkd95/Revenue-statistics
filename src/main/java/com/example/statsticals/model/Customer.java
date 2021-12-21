@@ -18,4 +18,6 @@ public class Customer {
     private String phone;
     @OneToMany(mappedBy = "customer")
     private List<Supply> supplyList;
+    @OneToMany(mappedBy = "customer")
+    private List<OrderDetail> orderDetailList;
 }

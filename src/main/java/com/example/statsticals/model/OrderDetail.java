@@ -7,17 +7,17 @@ import java.util.List;
 
 @Entity
 @Data
-public class Storage {
+public class OrderDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
     private Long quantity;
-    private String unit;
     private Long price;
-    private Long brokenItems;
     @Column(columnDefinition = "Date")
-    private String importDate;
-    @OneToMany(mappedBy = "storage")
+    private String date;
+    @OneToMany(mappedBy = "orderDetail")
     private List<Supply> supplyList;
+    @ManyToOne
+    @JoinColumn(name = "customer", referencedColumnName = "id")
+    private Customer customer;
 }

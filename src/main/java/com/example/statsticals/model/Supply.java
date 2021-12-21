@@ -3,6 +3,7 @@ package com.example.statsticals.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -28,5 +29,13 @@ public class Supply {
     @ManyToOne
     @JoinColumn(name ="supplyType",referencedColumnName = "id")
     private SupplyType supplyType;
+    @ManyToOne
+    @JoinColumn(name ="storage",referencedColumnName = "id")
+    private Storage storage;
+    @ManyToOne
+    @JoinColumn(name ="orderDetail",referencedColumnName = "id")
+    private OrderDetail orderDetail;
+    @OneToMany(mappedBy = "supply")
+    private List<ImportDetail> importDetailList;
 
 }
