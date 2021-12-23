@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface SupplyRepository extends JpaRepository<Supply,Long> {
-    @Query(value = "select ", nativeQuery = true)
-    Page<Supply> searchAll();
+//    @Query(value = "select ", nativeQuery = true)
+//    Page<Supply> searchAll();
 }
